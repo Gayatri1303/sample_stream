@@ -1,11 +1,14 @@
 import streamlit as st
 
 from pymongo import MongoClient
-# Connect to MongoDB
-connection_string = "mongodb+srv://gayatrikurulkar:gaya1303@quiz-cluster.rde4k.mongodb.net/"
+
+
+# Use Streamlit secret
+connection_string = st.secrets["MONGO_URI"]
 client = MongoClient(connection_string)
-db = client['quiz-db']
+db = client['quiz_db']
 collection = db['quizcollect']
+
 
 # Streamlit app
 st.title("Quiz Viewer")
