@@ -6,7 +6,7 @@ from pymongo import MongoClient
 # Use Streamlit secret
 connection_string = st.secrets["MONGO_URI"]
 client = MongoClient(connection_string)
-db = client['quiz_db']
+db = client['quiz-db']
 collection = db['quizcollect']
 
 
